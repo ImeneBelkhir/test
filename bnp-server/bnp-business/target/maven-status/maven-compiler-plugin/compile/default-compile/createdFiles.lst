@@ -1,0 +1,3 @@
+com\bnp\business\App.class
+com\bnp\business\impl\PromotionBusinessImpl.class
+com\bnp\business\PromotionBusiness.class
