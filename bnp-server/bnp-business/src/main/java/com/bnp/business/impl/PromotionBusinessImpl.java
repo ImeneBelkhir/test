@@ -1,12 +1,15 @@
 package com.bnp.business.impl;
 
-import static com.bnp.business.utils.Contstants.APPLE_PRICE;
-import static com.bnp.business.utils.Contstants.ORANGE_PRICE;
-import static com.bnp.business.utils.Contstants.WATER_MELON_PRICE;
+import static com.bnp.business.common.Utils.APPLE_PRICE;
+import static com.bnp.business.common.Utils.ORANGE_PRICE;
+import static com.bnp.business.common.Utils.WATER_MELON_PRICE;
+import static com.bnp.business.common.Utils.round;
 
 import org.springframework.stereotype.Service;
 
 import com.bnp.business.PromotionBusiness;
+
+
 @Service
 public class PromotionBusinessImpl implements PromotionBusiness {
 
@@ -21,13 +24,4 @@ public class PromotionBusinessImpl implements PromotionBusiness {
 		return round(total, 2);
 	}
 	
-	public static double round(double value, int places) {
-	    if (places < 0) throw new IllegalArgumentException();
-
-	    long factor = (long) Math.pow(10, places);
-	    double val = value * factor;
-	    long tmp = Math.round(val);
-	    return (double) tmp / factor;
-	}
-
 }

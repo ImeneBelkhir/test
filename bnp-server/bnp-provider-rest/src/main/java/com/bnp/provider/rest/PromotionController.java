@@ -1,5 +1,8 @@
 package com.bnp.provider.rest;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +31,13 @@ public class PromotionController {
 	    	LOG.info("Input parameters ===> {} apples, {} oranges, {} watermelons", appleNb, orangeNb, watermelonNb);
 	    	
 	    	Double total = promotionBusiness.calculatePrice(appleNb, orangeNb, watermelonNb);
+	    	Map<String,Double> map = new HashMap<>();
+	    	map.put("price", total);
 	    	
 	    	 if (total == 0.0) {
-	    	        return new ResponseEntity<>(total, HttpStatus.INTERNAL_SERVER_ERROR);
+	    	        return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 	    	    } else {
-	    	        return new ResponseEntity<>(total, HttpStatus.OK);
+	    	        return new ResponseEntity<>(map, HttpStatus.OK);
 	    	    }
 	    }
 	    

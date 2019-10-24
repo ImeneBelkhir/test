@@ -41,6 +41,11 @@
         <artifactId>spring-boot-starter</artifactId>
     </dependency>
     <dependency>
+	    <groupId>javax.inject</groupId>
+	    <artifactId>javax.inject</artifactId>
+	    <version>1</version>
+	</dependency>    
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
@@ -48,8 +53,8 @@
   </dependencies>
   
   <modules>
-  <module>bnp-provider-rest</module>
-  <module>bnp-business</module>
+	  <module>bnp-provider-rest</module>
+	  <module>bnp-business</module>
   </modules>
 
 </project>
